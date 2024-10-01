@@ -655,11 +655,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: 364f85e1-4235-472d-9a86-1423135367d6
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: RPG template
+  organizationId: yoshigamemaking
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

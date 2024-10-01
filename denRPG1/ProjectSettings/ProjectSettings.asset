@@ -655,11 +655,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: ace0c578-7f1a-4645-a0d9-9d23f2e54893
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: denRPG1
+  organizationId: yoshigamemaking
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 
