@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class ItemKeeper : MonoBehaviour
 {
-    public static int hasGoldKeys = 0;
-    public static int hasSilverKeys = 0;
+    public static int hasGoldKeys = 1;
+    public static int hasSilverKeys = 1;
     public static int hasArrows = 3;
     public static int hasLights = 0;
     // Start is called before the first frame update

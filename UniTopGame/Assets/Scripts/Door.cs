@@ -29,14 +29,15 @@ public class Door : MonoBehaviour
                     Destroy(this.gameObject);
                 }
             }
-        }
-        else 
-        {
-            if (ItemKeeper.hasSilverKeys > 0)
+            else 
             {
-                ItemKeeper.hasSilverKeys--;
-                Destroy(this.gameObject);
+                if (ItemKeeper.hasSilverKeys > 0)
+                {
+                    ItemKeeper.hasSilverKeys--;
+                    Destroy(this.gameObject);
+                }
             }
         }
+        
     }
 }
