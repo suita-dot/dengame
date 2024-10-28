@@ -14,4 +14,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/dungeon1.unity
     guid: 7951b5e56782a1a4baec6ab878af29e1
+  - enabled: 1
+    path: Assets/Scenes/gakkapc.unity
+    guid: dfaafc9e784f9894783eda4c1bedd16f
+  - enabled: 1
+    path: Assets/Scenes/pete.unity
+    guid: 6e30d619cbdedda468763bdc61b33a71
+  - enabled: 1
+    path: Assets/Scenes/suita.unity
+    guid: 41a76893ff3d20b4496f73b28c5ca649
+  - enabled: 1
+    path: Assets/Scenes/watta.unity
+    guid: 9c9138ac97a6e384fb1434c7f66cac83
+  - enabled: 1
+    path: Assets/Scenes/Yokota.unity
+    guid: 8e9a1695ae947dc4ba5b2404a4800c33
   m_configObjects: {}
