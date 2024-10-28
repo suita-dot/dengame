@@ -20,6 +20,19 @@ public class PlayerLightController : MonoBehaviour
     void Update()
     {
         transform.localEulerAngles = new Vector3(0,0,playerCnt.angleZ-90);
-        
+        if (ItemKeeper.hasLights>0)
+        {
+            lightTimer += Time.deltaTime;
+            if (lightTimer>10.0f)
+            {
+                lightTimer=0.0f;
+                ItemKeeper.hasLights--;
+                light2d.pointLightOuterRadius = ItemKeeper.hasLights;
+            }
+        }
+    }
+    public void LightUpdate()
+    {
+        light2d.pointLightOuterRadius = ItemKeeper.hasLights;
     }
 }
