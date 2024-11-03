@@ -4,30 +4,53 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public float Movedistance = 1.0f;
+    public float Moveduration = 0.3f;
+    public LayerMask obstacleMask; // 障害物用のレイヤー
 
-    // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-           transform.Translate(new Vector3(0,1,0) * Time.deltaTime);
+            StartCoroutine(Move(Vector3.up));
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-           transform.position -= new Vector3(0,1,0);
+            StartCoroutine(Move(Vector3.down));
         }
         if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-           transform.position += new Vector3(1,0,0);
+            StartCoroutine(Move(Vector3.right));
         }
         if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-           transform.position -= new Vector3(1,0,0);
+            StartCoroutine(Move(Vector3.left));
         }
     }
+
+    private IEnumerator Move(Vector3 direction)
+    {
+        Vector3 startPosition = transform.position;
+        Vector3 targetPosition = startPosition + direction * Movedistance;
+
+        // 障害物チェック
+        if (Physics.Raycast(transform.position, direction, Movedistance, obstacleMask))
+        {
+            transform.position = startPosition;
+            yield break; // 障害物がある場合、移動を中止
+        }
+
+        float elapsedTime = 0f;
+
+        while (elapsedTime < Moveduration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, (elapsedTime / Moveduration));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        // 最終位置を設定
+        transform.position = targetPosition;
+    }
 }
+
