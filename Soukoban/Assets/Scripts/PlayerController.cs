@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float Movedistance = 1.0f;
-    public float Moveduration = 0.3f;
-    public LayerMask obstacleMask; // 障害物用のレイヤー
+    float Movedistance = 1.0f;
+    float Moveduration = 0.2f;
+    float Movechecktime = 0.1f;
+    private Rigidbody2D rb2d;
+    float speed = 5.0f;
+
+
+    void Start()
+    {
+        rb2d = GetComponent<Rigidbody2D>();
+    }
 
     void Update()
     {
@@ -32,25 +40,31 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + direction * Movedistance;
-
-        // 障害物チェック
-        if (Physics.Raycast(transform.position, direction, Movedistance, obstacleMask))
-        {
-            transform.position = startPosition;
-            yield break; // 障害物がある場合、移動を中止
-        }
-
         float elapsedTime = 0f;
-
+        rb2d.velocity = direction*speed;
         while (elapsedTime < Moveduration)
         {
-            transform.position = Vector3.Lerp(startPosition, targetPosition, (elapsedTime / Moveduration));
+            
             elapsedTime += Time.deltaTime;
-            yield return null;
+            if (elapsedTime >= Movechecktime)
+            {
+                Vector3 location = transform.position - startPosition;
+                if (location.magnitude >= 0.2f)
+                {
+                    rb2d.velocity = direction*speed;
+                }
+                else
+                {
+                    transform.position = startPosition;
+                    rb2d.velocity = new Vector3 (0,0,0);
+                    yield break;
+                }
+            }
+            yield return null;            
         }
-
-        // 最終位置を設定
+        rb2d.velocity = new Vector3 (0,0,0);
         transform.position = targetPosition;
+        
     }
 }
 
