@@ -63,8 +63,7 @@ public class PlayerController : MonoBehaviour
             yield return null;            
         }
         rb2d.velocity = new Vector3 (0,0,0);
-        transform.position = targetPosition;
-        
+        transform.position = targetPosition;        
     }
 }
 
