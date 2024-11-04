@@ -11,10 +11,13 @@ public class PlayerController : MonoBehaviour
     float speed = 5.0f;
     float InputStay = 1.0f;
     public GameManager gameManager;
+    Animator animator;
+    int direction = 0;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -24,25 +27,31 @@ public class PlayerController : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
+
                 StartCoroutine(Move(Vector3.up));
                 InputStay = 0f;
+                direction = 2;
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 StartCoroutine(Move(Vector3.down));
                 InputStay = 0f;
+                direction = 0;
             }
             if (Input.GetKeyDown(KeyCode.RightArrow))
             {
                 StartCoroutine(Move(Vector3.right));
                 InputStay = 0f;
+                direction = 3;
             }
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 StartCoroutine(Move(Vector3.left));
                 InputStay = 0f;
+                direction = 1;
             }
-        }        
+        }
+        animator.SetInteger("Direction", direction);        
     }
 
     private IEnumerator Move(Vector3 direction)
