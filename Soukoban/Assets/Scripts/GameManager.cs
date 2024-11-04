@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public int remaingoals = 1;
     bool isClear = false;
     public Text clearText;
+    
     // Start is called before the first frame update
     void Start()
     {

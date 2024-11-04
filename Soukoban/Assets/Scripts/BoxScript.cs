@@ -11,6 +11,9 @@ public class BoxScript : MonoBehaviour
     private Rigidbody2D rb2d;
     float speed = 5.0f;
     float merge = 0.1f;
+    public Sprite BoxSprite;
+    public Sprite BoxGoalSprite;
+    public SpriteRenderer BoxRenderer;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,16 @@ public class BoxScript : MonoBehaviour
         Vector3 left = Distance - Vector3.left;
         Vector3 right = Distance - Vector3.right;
         InputStay += Time.deltaTime;
+        if (Distance.magnitude < 1.1f)
+        {
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        }
+        else
+        {
+            rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
+            rb2d.constraints |= RigidbodyConstraints2D.FreezePositionY;
+        }
         if (InputStay > Moveduration)
         {
             if (up.magnitude < merge && Input.GetKeyDown(KeyCode.UpArrow))
@@ -49,8 +62,18 @@ public class BoxScript : MonoBehaviour
                 StartCoroutine(Move(Vector3.left));
                 InputStay = 0f;
             }
-        }
-        
+        }        
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Goal")
+        BoxRenderer.sprite = BoxGoalSprite;
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Goal")
+        BoxRenderer.sprite = BoxSprite;
     }
 
     private IEnumerator Move(Vector3 direction)
