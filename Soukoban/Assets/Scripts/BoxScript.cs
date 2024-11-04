@@ -14,6 +14,7 @@ public class BoxScript : MonoBehaviour
     public Sprite BoxSprite;
     public Sprite BoxGoalSprite;
     public SpriteRenderer BoxRenderer;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +41,7 @@ public class BoxScript : MonoBehaviour
             rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
             rb2d.constraints |= RigidbodyConstraints2D.FreezePositionY;
         }
-        if (InputStay > Moveduration)
+        if (InputStay > Moveduration && gameManager.isClear == false)
         {
             if (up.magnitude < merge && Input.GetKeyDown(KeyCode.UpArrow))
             {

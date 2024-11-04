@@ -6,13 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     public int remaingoals = 1;
-    bool isClear = false;
+    public bool isClear = false;
     public Text clearText;
-    
+    public GameObject nextStage;
+
     // Start is called before the first frame update
     void Start()
     {
         clearText.text = "";
+        nextStage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -21,8 +23,9 @@ public class GameManager : MonoBehaviour
         Debug.Log(remaingoals);
         if (remaingoals <= 0)
         {
-            isClear = true;
+            isClear = true;            
             clearText.text = "CLEAR";
+            nextStage.SetActive(true);
         }
     }
 }

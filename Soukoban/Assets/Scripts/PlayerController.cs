@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     float speed = 5.0f;
     float InputStay = 1.0f;
+    public GameManager gameManager;
 
     void Start()
     {
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         InputStay += Time.deltaTime;
-        if (InputStay > Moveduration)
+        if (InputStay > Moveduration && gameManager.isClear == false)
         {
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
