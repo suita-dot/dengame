@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     float Movechecktime = 0.1f;
     private Rigidbody2D rb2d;
     float speed = 5.0f;
-
+    float InputStay = 1.0f;
 
     void Start()
     {
@@ -18,22 +18,30 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        InputStay += Time.deltaTime;
+        if (InputStay > Moveduration)
         {
-            StartCoroutine(Move(Vector3.up));
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            StartCoroutine(Move(Vector3.down));
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            StartCoroutine(Move(Vector3.right));
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            StartCoroutine(Move(Vector3.left));
-        }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                StartCoroutine(Move(Vector3.up));
+                InputStay = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                StartCoroutine(Move(Vector3.down));
+                InputStay = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                StartCoroutine(Move(Vector3.right));
+                InputStay = 0f;
+            }
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                StartCoroutine(Move(Vector3.left));
+                InputStay = 0f;
+            }
+        }        
     }
 
     private IEnumerator Move(Vector3 direction)
