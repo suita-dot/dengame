@@ -73,15 +73,15 @@ public class PlayerController : MonoBehaviour
                 }
                 else
                 {
-                    transform.position = startPosition;
+                    transform.position = new Vector3(Mathf.Round(startPosition.x),Mathf.Round(startPosition.y),transform.position.z);
                     rb2d.velocity = new Vector3 (0,0,0);
                     yield break;
                 }
             }
             yield return null;            
         }
-        rb2d.velocity = new Vector3 (0,0,0);
-        transform.position = targetPosition;        
+        rb2d.velocity = Vector2.zero;
+        transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
     }
 }
 
