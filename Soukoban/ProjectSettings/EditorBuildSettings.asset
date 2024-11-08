@@ -6,6 +6,126 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/HomeScene.unity
+    guid: 5cc14239b5831a74e8cdcad35afd08c0
+  - enabled: 1
+    path: Assets/Scenes/Stage1.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Stage2.unity
+    guid: 4959b6d41fea1a74281483c6d51dca94
+  - enabled: 1
+    path: Assets/Scenes/Stage3.unity
+    guid: 16b3c6fb573e3b8409f55b239037cd19
+  - enabled: 1
+    path: Assets/Scenes/Stage4.unity
+    guid: 693562f821575704bbf200a9680189f6
+  - enabled: 1
+    path: Assets/Scenes/Stage5.unity
+    guid: 230a20f51f573d24f9f41b8dc9b0c66b
+  - enabled: 1
+    path: Assets/Scenes/Stage6.unity
+    guid: 1b6987591fb46234da762798374f4db6
+  - enabled: 1
+    path: Assets/Scenes/Stage7.unity
+    guid: 5c8f00eef8867924e99061555577ae0a
+  - enabled: 1
+    path: Assets/Scenes/Stage8.unity
+    guid: 174b6aefa48094f45a1ca08329d286ed
+  - enabled: 1
+    path: Assets/Scenes/Stage9.unity
+    guid: 3c500bd66ba7a7a43abb777adb9a800d
+  - enabled: 1
+    path: Assets/Scenes/Stage10.unity
+    guid: 6fd287308f339e542b7656bccbc8deb6
+  - enabled: 1
+    path: Assets/Scenes/Stage11.unity
+    guid: 35d51cb89442c8348994b338af9f1c28
+  - enabled: 1
+    path: Assets/Scenes/Stage12.unity
+    guid: c1bc37800e27fc54e8684602d70666e5
+  - enabled: 1
+    path: Assets/Scenes/Stage13.unity
+    guid: 0a9bd7de4da78e54cb48817db4e36efa
+  - enabled: 1
+    path: Assets/Scenes/Stage14.unity
+    guid: d8cc62f2bfb53e443a6eb1ce359beda3
+  - enabled: 1
+    path: Assets/Scenes/Stage15.unity
+    guid: 23f82ff6c9e174645943fcf6bf68e977
+  - enabled: 1
+    path: Assets/Scenes/Stage16.unity
+    guid: 1083dc1c56954d544ab2003e4b4779e3
+  - enabled: 1
+    path: Assets/Scenes/Stage17.unity
+    guid: 8534ad899fb580141924b3fe83df85f6
+  - enabled: 1
+    path: Assets/Scenes/Stage18.unity
+    guid: a86620815b518c04aac4b34c68b954f2
+  - enabled: 1
+    path: Assets/Scenes/Stage19.unity
+    guid: 593f71795d5cdaa45a5c0f85b5e53acc
+  - enabled: 1
+    path: Assets/Scenes/Stage20.unity
+    guid: c52349ab059d1954c945c76af2ec3e19
+  - enabled: 1
+    path: Assets/Scenes/Stage21.unity
+    guid: da116ec892cddd24bb40ac39379bf0e0
+  - enabled: 1
+    path: Assets/Scenes/Stage22.unity
+    guid: 7008b0da3143e4449b1593a01850905a
+  - enabled: 1
+    path: Assets/Scenes/Stage23.unity
+    guid: 359e0028285860944b1f40448dfcc06f
+  - enabled: 1
+    path: Assets/Scenes/Stage24.unity
+    guid: 2d3dd0c07adb94746b1bb977371822ba
+  - enabled: 1
+    path: Assets/Scenes/Stage25.unity
+    guid: 8c8ea909a07aa3c488cadfd6e55f20be
+  - enabled: 1
+    path: Assets/Scenes/Stage26.unity
+    guid: f2fc2bd87b810ba49af7c482e2b334a5
+  - enabled: 1
+    path: Assets/Scenes/Stage27.unity
+    guid: 71743b51d004b784ea67537d0c98966f
+  - enabled: 1
+    path: Assets/Scenes/Stage28.unity
+    guid: c68564638b5b04841a10b42bd2281c4f
+  - enabled: 1
+    path: Assets/Scenes/Stage29.unity
+    guid: 499694049dd9dd14aa991f97834fdca7
+  - enabled: 1
+    path: Assets/Scenes/Stage30.unity
+    guid: af4bc9b144e9cf84cb5b481c0472ef14
+  - enabled: 1
+    path: Assets/Scenes/Stage31.unity
+    guid: a7012560615cb9f43bb1b6aba09ab1fc
+  - enabled: 1
+    path: Assets/Scenes/Stage32.unity
+    guid: 5a7e0d09205921147963b78db0e5c209
+  - enabled: 1
+    path: Assets/Scenes/Stage33.unity
+    guid: 09b432d97c163584f848824eb184b971
+  - enabled: 1
+    path: Assets/Scenes/Stage34.unity
+    guid: 160ef3b2a03965942b9cd0fbc01da73b
+  - enabled: 1
+    path: Assets/Scenes/Stage35.unity
+    guid: 404f70f6706e8664cab29264427f5bac
+  - enabled: 1
+    path: Assets/Scenes/Stage36.unity
+    guid: 89248df6f4064e44a952a189dd38efe0
+  - enabled: 1
+    path: Assets/Scenes/Stage37.unity
+    guid: 3da9d44ab6773a64ca70a230255f7ad6
+  - enabled: 1
+    path: Assets/Scenes/Stage38.unity
+    guid: 9141c6bffc849f34890554265c176002
+  - enabled: 1
+    path: Assets/Scenes/Stage39.unity
+    guid: 8087a15cf57720746a3daa6c6b907c6b
+  - enabled: 1
+    path: Assets/Scenes/Stage40.unity
+    guid: 7aff91a4697c4274e85b42f98bc51de2
   m_configObjects: {}
