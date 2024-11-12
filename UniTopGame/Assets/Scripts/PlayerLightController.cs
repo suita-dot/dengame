@@ -11,7 +11,10 @@ public class PlayerLightController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         light2d = GetComponent<Light2D>();
+        light2d.intensity = 1.0f;
+        light2d.color = new Color(1,0,0,1);
         light2d.pointLightOuterRadius = (float)ItemKeeper.hasLights;
         playerCnt = GameObject.FindObjectOfType<PlayerScript>();
     }

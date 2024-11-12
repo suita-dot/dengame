@@ -56,6 +56,7 @@ public class ItemData : MonoBehaviour
             else if (type == ItemType.light)
             {
                 ItemKeeper.hasLights += count;
+                GameObject.FindObjectOfType<PlayerLightController>().LightUpdate();
             }
             gameObject.GetComponent<CircleCollider2D>().enabled = false;
             Rigidbody2D itemBody = GetComponent<Rigidbody2D>();
