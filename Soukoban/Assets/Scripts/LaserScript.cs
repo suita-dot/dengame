@@ -6,10 +6,7 @@ public class LaserScript : MonoBehaviour
 {
     private Rigidbody2D rb2d;
     private float speed = 5f;
-    public bool isRight = false;
-    public bool isLeft = false;
-    public bool isUp = false;
-    public bool isDown = false;
+    public LaserGunScript laserGunScript;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,26 +16,34 @@ public class LaserScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isRight)
+        if (laserGunScript != null)
         {
-            rb2d.velocity = new Vector3(speed, 0,0);
+            if (laserGunScript.isRight == true)
+            {
+                rb2d.velocity = new Vector2(speed, 0);
+            }
+            else if (laserGunScript.isLeft)
+            {
+                rb2d.velocity= new Vector2(-speed,0);
+            }
+            else if (laserGunScript.isUp)
+            {
+                rb2d.velocity = new Vector2(0, speed);
+            }
+            else if (laserGunScript.isDown)
+            {
+                rb2d.velocity = new Vector2(0, -speed);
+            }  
         }
-        if (isLeft)
-        {
-            transform.Translate(-0.1f, 0, 0);
-        }
-        if (isUp)
-        {
-            rb2d.velocity = new Vector3(0, speed,0);
-        }
-        if (isDown)
-        {
-            rb2d.velocity = new Vector3(0, speed,0);
-        }        
+              
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        Destroy(gameObject);
+        if (other.gameObject.tag != "Box")
+        {
+            Destroy(gameObject);
+        }
+        
     }
 }

@@ -1959,6 +1959,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f75f291f02f4f64990ad173a0abb945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRight: 1
+  isLeft: 0
+  isUp: 0
+  isDown: 0
 --- !u!212 &1000118419
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2056,6 +2060,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fa96998a7e62cb43bc84b825349ff4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isRight: 0
+  isLeft: 0
+  isUp: 0
+  isDown: 0
+  laser: {fileID: 0}
 --- !u!212 &1045236953
 SpriteRenderer:
   m_ObjectHideFlags: 0
