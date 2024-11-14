@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
     public Text clearText;
     public GameObject clearImage;
     public GameObject nextStage;
+    public Text gameoverText;
+    public GameObject gameoverImage;
+    public PlayerController player;
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +20,8 @@ public class GameManager : MonoBehaviour
         clearText.text = "";
         clearImage.SetActive(false);
         nextStage.SetActive(false);
+        gameoverText.text = "";
+        gameoverImage.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,6 +34,11 @@ public class GameManager : MonoBehaviour
             isClear = true;            
             clearText.text = "CLEAR";
             nextStage.SetActive(true);
+        }
+        if (player.isGameover == true)
+        {
+            gameoverText.text = "GAMEOVER";
+            gameoverImage.SetActive(true);
         }
     }
 }

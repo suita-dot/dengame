@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public GameManager gameManager;
     Animator animator;
     int direction = 0;
+    public bool isGameover = false;
 
     void Start()
     {
@@ -82,6 +83,24 @@ public class PlayerController : MonoBehaviour
         }
         rb2d.velocity = Vector2.zero;
         transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
+    }
+    private IEnumerator Gameover()
+    {
+        Destroy(gameObject);
+        
+        yield return null;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (gameManager.isClear == false)
+        {
+            if (other.gameObject.tag == "Damage")
+            {
+                isGameover = true;
+                StartCoroutine(Gameover());
+            }
+        }        
     }
 }
 

@@ -46,6 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   remaingoals: 1
   isClear: 0
-  clearText: {fileID: 0}
-  clearImage: {fileID: 0}
-  nextStage: {fileID: 0}
+  clearText: {fileID: 3652081476477988236, guid: 31ce7826389d08b4281c79991cac7464, type: 3}
+  clearImage: {fileID: 4346054535584378493, guid: 296f4cb049541a04687fe50c3c0a70ff, type: 3}
+  nextStage: {fileID: 8462653110640071454, guid: f2d804045bda6b94bb37608559730d42, type: 3}
+  gameoverText: {fileID: 7941766094616932322, guid: cab0105033c221940a772964e0f755e5, type: 3}
+  gameoverImage: {fileID: 7440259827728758284, guid: 2f6a26f41203abb49b7af2411d1f109f, type: 3}
+  player: {fileID: 7203244509222524850, guid: f50b8e78a34094a4c8c15fc78399676d, type: 3}

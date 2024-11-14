@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserScript : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    private float speed = 15f;
+    private float speed = 10f;
     public LaserGunScript laserGunScript;
     // Start is called before the first frame update
     void Start()
