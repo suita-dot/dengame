@@ -87,20 +87,27 @@ public class PlayerController : MonoBehaviour
     private IEnumerator Gameover()
     {
         Destroy(gameObject);
-        
+        isGameover = true;
         yield return null;
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (gameManager.isClear == false)
+    
+        if (other.gameObject.tag == "Damage")
         {
-            if (other.gameObject.tag == "Damage")
+            if (gameManager.isClear == true)
             {
-                isGameover = true;
+                return;
+            }
+            else
+            {
+                
                 StartCoroutine(Gameover());
             }
-        }        
+                
+        }
+           
     }
 }
 

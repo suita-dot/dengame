@@ -28,17 +28,22 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         Debug.Log(remaingoals);
-        if (remaingoals <= 0)
-        {
-            clearImage.SetActive(true);
-            isClear = true;            
-            clearText.text = "CLEAR";
-            nextStage.SetActive(true);
-        }
+        
+        
         if (player.isGameover == true)
         {
             gameoverText.text = "GAMEOVER";
             gameoverImage.SetActive(true);
+        }
+        else if (player.isGameover == false)
+        {
+            if (remaingoals <= 0)
+            {
+                clearImage.SetActive(true);
+                isClear = true;            
+                clearText.text = "CLEAR";
+                nextStage.SetActive(true);
+            }
         }
     }
 }
