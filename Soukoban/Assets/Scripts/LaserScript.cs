@@ -5,7 +5,7 @@ using UnityEngine;
 public class LaserScript : MonoBehaviour
 {
     private Rigidbody2D rb2d;
-    private float speed = 5f;
+    private float speed = 15f;
     public LaserGunScript laserGunScript;
     // Start is called before the first frame update
     void Start()
@@ -40,7 +40,7 @@ public class LaserScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Box")
+        if (other.gameObject.tag != "Lasergun")
         {
             Destroy(gameObject);
         }
