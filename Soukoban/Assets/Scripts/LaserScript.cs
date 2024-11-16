@@ -40,7 +40,7 @@ public class LaserScript : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag != "Lasergun")
+        if (other.gameObject.tag != "Lasergun"&& other.gameObject.tag != "Goal")
         {
             Destroy(gameObject);
         }
