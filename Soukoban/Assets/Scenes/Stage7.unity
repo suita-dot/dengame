@@ -1642,6 +1642,9 @@ MonoBehaviour:
   clearText: {fileID: 243339285}
   clearImage: {fileID: 609969775}
   nextStage: {fileID: 1076602316}
+  gameoverText: {fileID: 0}
+  gameoverImage: {fileID: 0}
+  player: {fileID: 1674739566}
 --- !u!4 &1128579876
 Transform:
   m_ObjectHideFlags: 0
@@ -1994,6 +1997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 1128579875}
+  isGameover: 0
 --- !u!61 &1674739567
 BoxCollider2D:
   m_ObjectHideFlags: 0
