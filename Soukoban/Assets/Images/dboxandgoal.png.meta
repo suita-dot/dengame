@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c43e100a88093c943a1e2f625072e3b8
+guid: 54fd20ba4b0e89c46aee13d98b4cfb28
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: boxes_0
+      name: dboxandgoal_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a5e7a77a94fe9274c91eb39e7431a693
-      internalID: -77803552
+      spriteID: 8bd1c9aae9a766d498f9bbb17719a6c9
+      internalID: -593178580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boxes_1
+      name: dboxandgoal_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2b03de6579a98744c94e0a122c576cc8
-      internalID: -1215976989
+      spriteID: 475f8cb0c13157e4fbef1574fb3a2f1e
+      internalID: 1760906948
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: boxes_2
+      name: dboxandgoal_2
       rect:
         serializedVersion: 2
         x: 64
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d859514dc9e9a3b4db51ff28a9ae4d30
-      internalID: -1415029370
+      spriteID: 9b40df471e2edfb4fbd48fbacd59b96a
+      internalID: 46416723
       vertices: []
       indices: 
       edges: []
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      boxes_0: -77803552
-      boxes_1: -1215976989
-      boxes_2: -1415029370
+      dboxandgoal_0: -593178580
+      dboxandgoal_1: 1760906948
+      dboxandgoal_2: 46416723
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

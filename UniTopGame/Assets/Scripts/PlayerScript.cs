@@ -32,6 +32,7 @@ public class PlayerScript : MonoBehaviour
             angle = angleZ;
         }
         return angle;
+        
     }
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,7 @@ public class PlayerScript : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         gameState = "playing";
+        hp = PlayerPrefs.GetInt("PlayerHP");
     }
 
     // Update is called once per frame
@@ -128,6 +130,7 @@ public class PlayerScript : MonoBehaviour
         if (gameState == "playing")
         {
             hp--;
+            PlayerPrefs.SetInt("PlayerHP",hp);
             if (hp>0)
             {
                 rbody.velocity = new Vector2(0,0);

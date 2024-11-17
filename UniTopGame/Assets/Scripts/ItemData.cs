@@ -51,6 +51,7 @@ public class ItemData : MonoBehaviour
                 if (PlayerScript.hp <3)
                 {
                     PlayerScript.hp++;
+                    PlayerPrefs.SetInt("PlayrHP",PlayerScript.hp);
                 }
             }
             else if (type == ItemType.light)

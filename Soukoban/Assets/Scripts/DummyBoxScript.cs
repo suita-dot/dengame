@@ -2,58 +2,69 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class DummyBoxScript : MonoBehaviour
 {
     float Movedistance = 1.0f;
     float Moveduration = 0.2f;
-    float Movechecktime = 0.1f;
+    float Movechecktime = 0.15f;
+    float InputStay = 1.0f;
     private Rigidbody2D rb2d;
     float speed = 5.0f;
-    float InputStay = 1.0f;
+    float merge = 0.1f;
     public GameManager gameManager;
-    Animator animator;
-    int direction = 0;
-    public bool isGameover = false;
-
+    
+    // Start is called before the first frame update
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
     }
 
+    // Update is called once per frame
     void Update()
     {
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        Vector3 Distance = transform.position - player.transform.position;
+        Vector3 up = Distance - Vector3.up;
+        Vector3 down = Distance - Vector3.down;
+        Vector3 left = Distance - Vector3.left;
+        Vector3 right = Distance - Vector3.right;
         InputStay += Time.deltaTime;
+        if (Distance.magnitude < 1.01f)
+        {
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
+            rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
+        }
+        else
+        {
+            rb2d.constraints |= RigidbodyConstraints2D.FreezePositionX;
+            rb2d.constraints |= RigidbodyConstraints2D.FreezePositionY;
+        }
         if (InputStay > Moveduration && gameManager.isClear == false)
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (up.magnitude < merge && Input.GetKeyDown(KeyCode.UpArrow))
             {
-
                 StartCoroutine(Move(Vector3.up));
                 InputStay = 0f;
-                direction = 2;
             }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
+            if (down.magnitude < merge && Input.GetKeyDown(KeyCode.DownArrow))
             {
                 StartCoroutine(Move(Vector3.down));
                 InputStay = 0f;
-                direction = 0;
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
+            if (right.magnitude < merge && Input.GetKeyDown(KeyCode.RightArrow))
             {
                 StartCoroutine(Move(Vector3.right));
                 InputStay = 0f;
-                direction = 3;
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            if (left.magnitude < merge && Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 StartCoroutine(Move(Vector3.left));
                 InputStay = 0f;
-                direction = 1;
             }
-        }
-        animator.SetInteger("Direction", direction);        
+        }        
     }
+
+
 
     private IEnumerator Move(Vector3 direction)
     {
@@ -68,7 +79,7 @@ public class PlayerController : MonoBehaviour
             if (elapsedTime >= Movechecktime)
             {
                 Vector3 location = transform.position - startPosition;
-                if (location.magnitude >= 0.2f)
+                if (location.magnitude >= 0.5f)
                 {
                     rb2d.velocity = direction*speed;
                 }
@@ -81,33 +92,8 @@ public class PlayerController : MonoBehaviour
             }
             yield return null;            
         }
-        rb2d.velocity = Vector2.zero;
-        transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
-    }
-    private IEnumerator Gameover()
-    {
-        Destroy(gameObject);
-        isGameover = true;
-        yield return null;
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-    
-        if (other.gameObject.tag == "Damage")
-        {
-            if (gameManager.isClear == true)
-            {
-                return;
-            }
-            else
-            {
-                
-                StartCoroutine(Gameover());
-            }
-                
-        }
-           
+        rb2d.velocity = new Vector3 (0,0,0);
+        transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);      
     }
 }
 
