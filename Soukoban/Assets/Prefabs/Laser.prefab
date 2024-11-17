@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8979674825660777867}
   - component: {fileID: 5373318371141406266}
   - component: {fileID: 7300518439007263979}
+  - component: {fileID: 8396879051874910694}
   m_Layer: 0
   m_Name: Laser
   m_TagString: Damage
@@ -99,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f75f291f02f4f64990ad173a0abb945, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 15
   laserGunScript: {fileID: 7384381406452220761, guid: ba6e346b9c1c725489418e4ef39a47f4, type: 3}
 --- !u!50 &5373318371141406266
 Rigidbody2D:
@@ -170,5 +172,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
+--- !u!95 &8396879051874910694
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368987887815870825}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24a17bf27541f9e42a9224a66168e4d3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
