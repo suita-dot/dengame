@@ -8,6 +8,7 @@ TagManager:
   - Goal
   - Lasergun
   - Damage
+  - Oneway
   layers:
   - Default
   - TransparentFX
