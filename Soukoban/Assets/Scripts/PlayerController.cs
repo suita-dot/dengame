@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     int direction = 0;
     public bool isGameover = false;
+    public int hasKeys = 0;
 
     void Start()
     {
