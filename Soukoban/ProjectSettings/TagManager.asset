@@ -9,6 +9,7 @@ TagManager:
   - Lasergun
   - Damage
   - Oneway
+  - Dummy
   layers:
   - Default
   - TransparentFX

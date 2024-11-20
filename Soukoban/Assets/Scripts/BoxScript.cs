@@ -15,6 +15,9 @@ public class BoxScript : MonoBehaviour
     public Sprite BoxGoalSprite;
     public SpriteRenderer BoxRenderer;
     public GameManager gameManager;
+    //public OnewayboardScript oneway;
+    bool isMoving = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +34,7 @@ public class BoxScript : MonoBehaviour
         Vector3 left = Distance - Vector3.left;
         Vector3 right = Distance - Vector3.right;
         InputStay += Time.deltaTime;
-        if (Distance.magnitude < 1.01f)
+        if (Distance.magnitude < 1.01f || isMoving == true)
         {
             rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
@@ -66,24 +69,12 @@ public class BoxScript : MonoBehaviour
         }        
     }
 
-    
-    void OnTriggerStay2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Goal")
-        BoxRenderer.sprite = BoxGoalSprite;
-    }
-    void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.gameObject.tag == "Goal")
-        BoxRenderer.sprite = BoxSprite;
-    }
-
-    private IEnumerator Move(Vector3 direction)
+    private IEnumerator Move(Vector3 playerdirection)
     {
         Vector3 startPosition = transform.position;
-        Vector3 targetPosition = startPosition + direction * Movedistance;
+        Vector3 targetPosition = startPosition + playerdirection * Movedistance;
         float elapsedTime = 0f;
-        rb2d.velocity = direction*speed;
+        rb2d.velocity = playerdirection*speed;
         while (elapsedTime < Moveduration)
         {
             
@@ -93,7 +84,7 @@ public class BoxScript : MonoBehaviour
                 Vector3 location = transform.position - startPosition;
                 if (location.magnitude >= 0.5f)
                 {
-                    rb2d.velocity = direction*speed;
+                    rb2d.velocity = playerdirection*speed;
                 }
                 else
                 {
@@ -107,4 +98,27 @@ public class BoxScript : MonoBehaviour
         rb2d.velocity = new Vector3 (0,0,0);
         transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);      
     }
+
+    private IEnumerator ForcedMove(Vector3 playerdirection)
+    {
+        yield return new WaitForSeconds(0.2f);
+        yield return Move(playerdirection);
+    }
+    private IEnumerator ForcedMove2(Vector3 playerdirection)
+    {
+        yield return Move(playerdirection);
+        isMoving = false;
+    }
+
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Goal")
+        BoxRenderer.sprite = BoxGoalSprite;
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Goal")
+        BoxRenderer.sprite = BoxSprite;
+    }
+    
 }

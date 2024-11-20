@@ -8,6 +8,8 @@ public class OnewayboardScript : MonoBehaviour
     public bool isLeft;
     public bool isUp;
     public bool isDown;
+    Animator animator;
+    
     // Start is called before the first frame update
     void Start()
     {

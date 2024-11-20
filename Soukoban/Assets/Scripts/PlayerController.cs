@@ -86,6 +86,7 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = Vector2.zero;
         transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
     }
+
     private IEnumerator ForcedMove(Vector3 playerdirection)
     {
         yield return new WaitForSeconds(0.2f);
@@ -110,6 +111,7 @@ public class PlayerController : MonoBehaviour
         }
         yield return Move(playerdirection);
     }
+
     private IEnumerator Gameover()
     {
         Destroy(gameObject);
@@ -135,7 +137,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "Oneway")
         {
-            InputStay = 0;
+            InputStay = -0.1f;
             if (oneway.isRight)
             {                
                 
