@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 20107921227146931, guid: b9e39112e81cb084eb23ba62b3a43811, type: 3}
   isGameover: 0
+  hasKeys: 0
+  oneway: {fileID: 0}
 --- !u!50 &2974315549008775732
 Rigidbody2D:
   serializedVersion: 4
