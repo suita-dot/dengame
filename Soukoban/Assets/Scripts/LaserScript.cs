@@ -14,6 +14,7 @@ public class LaserScript : MonoBehaviour
     {
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -39,7 +40,7 @@ public class LaserScript : MonoBehaviour
             else if (laserGunScript.isDown)
             {
                 rb2d.velocity = new Vector2(0, -speed);
-                animator.SetInteger("direction",0);
+                animator.SetInteger("direction", 0);
             }  
         }
               

@@ -6,6 +6,9 @@ public class Switch : MonoBehaviour
 {
     public bool isPushed = false;
     public float OpenTime;
+    public SpriteRenderer SwitchRenderer;
+    public Sprite SwitchOn;
+    public Sprite SwitchOff;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +23,7 @@ public class Switch : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         isPushed = true;
+        SwitchRenderer.sprite = SwitchOn;
     }
     void OnTriggerExit2D(Collider2D other)
     {
@@ -31,11 +35,13 @@ public class Switch : MonoBehaviour
         
         while (count <= time)
         {
+
             count += Time.deltaTime;
             isPushed = true;
             yield return null;
         }
         isPushed = false;
+        SwitchRenderer.sprite = SwitchOff;
     }
 
 }
