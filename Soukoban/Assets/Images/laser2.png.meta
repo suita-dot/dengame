@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: b1871dc8ec9059940859e9058795cd6f
+guid: 3c993783e467fb649847284043889f54
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LaserandGun_0
+      name: laser2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ec8155ad8ad06343ae57641a54823c9
-      internalID: 1883772276
+      spriteID: e93865d73972bd04e803b4457c27862a
+      internalID: -1697110444
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: LaserandGun_1
+      name: laser2_1
       rect:
         serializedVersion: 2
         x: 32
@@ -132,8 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e2779a00a36e4874eabee159730a34d7
-      internalID: 1727186333
+      spriteID: 111b3bda2ab1d2a438d2b9795f62297e
+      internalID: 838488261
       vertices: []
       indices: 
       edges: []
@@ -149,8 +149,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      LaserandGun_0: 1883772276
-      LaserandGun_1: 1727186333
+      laser2_0: -1697110444
+      laser2_1: 838488261
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

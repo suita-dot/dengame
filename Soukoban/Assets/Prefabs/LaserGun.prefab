@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 1883772276, guid: b1871dc8ec9059940859e9058795cd6f, type: 3}
+  m_Sprite: {fileID: -1697110444, guid: 3c993783e467fb649847284043889f54, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,9 @@ MonoBehaviour:
   isLeft: 0
   isUp: 0
   isDown: 0
+  interval: 1
   laser: {fileID: 368987887815870825, guid: 701a06e3625351743aadf36608265c6f, type: 3}
+  gameManager: {fileID: 0}
 --- !u!50 &8360293223682358185
 Rigidbody2D:
   serializedVersion: 4
@@ -174,5 +176,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.95, y: 0.95}
   m_EdgeRadius: 0
