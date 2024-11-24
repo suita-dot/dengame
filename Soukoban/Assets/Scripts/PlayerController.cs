@@ -16,6 +16,8 @@ public class PlayerController : MonoBehaviour
     public bool isGameover = false;
     public int hasKeys = 0;
     public OnewayboardScript oneway;
+    public SwitchDoor switchDoor;
+    
 
     void Start()
     {
@@ -137,7 +139,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.gameObject.tag == "Oneway")
         {
-            InputStay = -0.1f;
+            InputStay = -0.2f;
             if (oneway.isRight)
             {                
                 
@@ -157,8 +159,14 @@ public class PlayerController : MonoBehaviour
             {                
                 StartCoroutine(ForcedMove(Vector3.down));
             }
+            
         }
-           
+        if (other.gameObject.tag == "SwitchDoor")
+        {
+            StartCoroutine(Move(Vector3.down));
+            switchDoor.door.enabled = false;
+        }
     }
+    
 }
 

@@ -5,6 +5,7 @@ using UnityEngine;
 public class Switch : MonoBehaviour
 {
     public bool isPushed = false;
+    public bool remove = false;
     public float OpenTime;
     public SpriteRenderer SwitchRenderer;
     public Sprite SwitchOn;
@@ -32,15 +33,19 @@ public class Switch : MonoBehaviour
     private IEnumerator SwitchPushed(float time)
     {
         float count = 0f;
-        
+        float removetime = time - 2f;
         while (count <= time)
         {
-
             count += Time.deltaTime;
             isPushed = true;
+            if (count >= removetime)
+            {
+                remove = true;
+            }
             yield return null;
         }
         isPushed = false;
+        remove = false;
         SwitchRenderer.sprite = SwitchOff;
     }
 

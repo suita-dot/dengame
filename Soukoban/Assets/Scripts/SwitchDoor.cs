@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class SwitchDoor : MonoBehaviour
 {
-    private BoxCollider2D door;
+    public BoxCollider2D door;
     private SpriteRenderer doorSprite;
     public Switch switchButton;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +20,19 @@ public class SwitchDoor : MonoBehaviour
     {
         if (switchButton.isPushed == false)
         {
+            door.enabled = true;
             door.isTrigger = false;
             doorSprite.enabled = true;
         }
         else if (switchButton.isPushed == true)
         {
             door.isTrigger = true;
-            doorSprite.enabled = false;
+            door.enabled = false;
+            doorSprite.enabled = false;            
+        }
+        if (switchButton.remove == true)
+        {            
+            door.enabled = true;
         }
     }
 }
