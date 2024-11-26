@@ -31,6 +31,7 @@ public class ItemBox : MonoBehaviour
             {
                 Instantiate(itemPrefab, transform.position, Quaternion.identity);
             }
+            SaveDataManager.SetArrangeId(arrangeId, gameObject.tag);
         }
     }
 }
