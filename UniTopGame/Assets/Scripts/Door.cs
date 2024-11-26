@@ -27,6 +27,7 @@ public class Door : MonoBehaviour
                 {
                     ItemKeeper.hasGoldKeys--;
                     Destroy(this.gameObject);
+                    SaveDataManager.SetArrangeId(arrangeId, gameObject.tag);
                 }
             }
             else 
@@ -35,6 +36,7 @@ public class Door : MonoBehaviour
                 {
                     ItemKeeper.hasSilverKeys--;
                     Destroy(this.gameObject);
+                    SaveDataManager.SetArrangeId(arrangeId,gameObject.tag);
                 }
             }
         }
