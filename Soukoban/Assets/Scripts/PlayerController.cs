@@ -122,8 +122,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
-    
+    {    
         if (other.gameObject.tag == "Damage")
         {
             if (gameManager.isClear == true)
@@ -131,41 +130,31 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             else
-            {
-                
+            {                
                 StartCoroutine(Gameover());
             }
-                
         }
         if (other.gameObject.tag == "Oneway")
         {
             InputStay = -0.2f;
             if (oneway.isRight)
-            {                
-                
+            { 
                 StartCoroutine(ForcedMove(Vector3.right));
             }
             if (oneway.isLeft)
             {
-                
                 StartCoroutine(ForcedMove(Vector3.left));
             }
             if (oneway.isUp)
-            {                
-                
+            {     
                 StartCoroutine(ForcedMove(Vector3.up));
             }
             if (oneway.isDown)
             {                
                 StartCoroutine(ForcedMove(Vector3.down));
-            }
-            
+            }            
         }
-        if (other.gameObject.tag == "SwitchDoor")
-        {
-            StartCoroutine(Move(Vector3.down));
-            switchDoor.door.enabled = false;
-        }
+        
     }
     
 }
