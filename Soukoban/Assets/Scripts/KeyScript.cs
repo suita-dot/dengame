@@ -6,17 +6,7 @@ public class KeyScript : MonoBehaviour
 {
     //PlayerControllerを取得
     public PlayerController player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     void OnTriggerEnter2D (Collider2D other)
     {

@@ -13,12 +13,6 @@ public class FragileFloor : MonoBehaviour
         stopper = GetComponent<BoxCollider2D>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.gameObject.tag == "Player")
