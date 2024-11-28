@@ -18,16 +18,16 @@ public class LockedDoorScript : MonoBehaviour
         
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
+    //void ????(???? collision)
+    //{
         //もしぶつかったゲームオブジェクトのタグが"Player"で
         //かつhasKeysの値が1以上なら
-        if (collision.gameObject.tag == "Player" && player.hasKeys>=1)
-        {
+        //if (????????????)
+        //{
             //ドアを解錠＝ドアのゲームオブジェクトを破壊
-            Destroy(gameObject);
+            //????
             //PlayerControllerのhasKeysを1減らす
-            player.hasKeys -= 1;
-        }
-    }
+            //????
+        //}
+    //}
 }
