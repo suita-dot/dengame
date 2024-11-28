@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class FragileFloor : MonoBehaviour
-{
+{//Unityメモ、「Componentをスクリプトから操作」～「タグ」参照
     //BoxCollider2Dを取得その1
     //private ???? stopper;
     //SpriteRendererを取得
