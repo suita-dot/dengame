@@ -12,7 +12,7 @@ public class DummyBoxScript : MonoBehaviour
     float speed = 5.0f;
     float merge = 0.1f;
     public GameManager gameManager;
-    
+    public OnewayboardScript oneway;
     // Start is called before the first frame update
     void Start()
     {

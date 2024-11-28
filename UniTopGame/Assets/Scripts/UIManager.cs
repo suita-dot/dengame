@@ -89,7 +89,7 @@ public class UIManager : MonoBehaviour
 
     public void Retry()
     {
-        PlayerScript.hp = 3;
+        PlayerPrefs.SetInt("PlayerHP", 3);
         SceneManager.LoadScene(retrySceneName);
     }
 

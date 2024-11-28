@@ -14,6 +14,10 @@ public class PlayerController : MonoBehaviour
     Animator animator;
     int direction = 0;
     public bool isGameover = false;
+    public int hasKeys = 0;
+    public OnewayboardScript oneway;
+    public SwitchDoor switchDoor;
+    
 
     void Start()
     {
@@ -55,12 +59,12 @@ public class PlayerController : MonoBehaviour
         animator.SetInteger("Direction", direction);        
     }
 
-    private IEnumerator Move(Vector3 direction)
+    private IEnumerator Move(Vector3 playerdirection)
     {
         Vector3 startPosition = transform.position;
-        Vector3 targetPosition = startPosition + direction * Movedistance;
+        Vector3 targetPosition = startPosition + playerdirection * Movedistance;
         float elapsedTime = 0f;
-        rb2d.velocity = direction*speed;
+        rb2d.velocity = playerdirection*speed;
         while (elapsedTime < Moveduration)
         {
             
@@ -70,7 +74,7 @@ public class PlayerController : MonoBehaviour
                 Vector3 location = transform.position - startPosition;
                 if (location.magnitude >= 0.2f)
                 {
-                    rb2d.velocity = direction*speed;
+                    rb2d.velocity = playerdirection*speed;
                 }
                 else
                 {
@@ -84,6 +88,32 @@ public class PlayerController : MonoBehaviour
         rb2d.velocity = Vector2.zero;
         transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
     }
+
+    private IEnumerator ForcedMove(Vector3 playerdirection)
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (playerdirection.x == 1)
+        {
+            direction = 3;
+        }
+        else if (playerdirection.x == -1)
+        {
+            direction = 1;
+        }
+        else if (playerdirection.x == 0)
+        {
+            if (playerdirection.y == 1)
+            {
+                direction = 2;
+            }
+            else if (playerdirection.y == -1)
+            {
+                direction = 0;
+            }
+        }
+        yield return Move(playerdirection);
+    }
+
     private IEnumerator Gameover()
     {
         Destroy(gameObject);
@@ -92,8 +122,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
-    
+    {    
         if (other.gameObject.tag == "Damage")
         {
             if (gameManager.isClear == true)
@@ -101,13 +130,32 @@ public class PlayerController : MonoBehaviour
                 return;
             }
             else
-            {
-                
+            {                
                 StartCoroutine(Gameover());
             }
-                
         }
-           
+        if (other.gameObject.tag == "Oneway")
+        {
+            InputStay = -0.2f;
+            if (oneway.isRight)
+            { 
+                StartCoroutine(ForcedMove(Vector3.right));
+            }
+            if (oneway.isLeft)
+            {
+                StartCoroutine(ForcedMove(Vector3.left));
+            }
+            if (oneway.isUp)
+            {     
+                StartCoroutine(ForcedMove(Vector3.up));
+            }
+            if (oneway.isDown)
+            {                
+                StartCoroutine(ForcedMove(Vector3.down));
+            }            
+        }
+        
     }
+    
 }
 

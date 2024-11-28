@@ -96,6 +96,7 @@ public class EnemyController : MonoBehaviour
                 rbody.velocity = Vector2.zero;
                 animator.SetBool("IsDead",true);
                 Destroy(gameObject, 0.5f);
+                SaveDataManager.SetArrangeId(arrangeId, gameObject.tag);
             }
         }
     }

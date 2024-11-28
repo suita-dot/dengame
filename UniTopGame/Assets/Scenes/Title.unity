@@ -742,6 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startButton: {fileID: 377899629}
   continueButton: {fileID: 875310449}
+  firstSceneName: WorldMap
 --- !u!1 &1166644621
 GameObject:
   m_ObjectHideFlags: 0
