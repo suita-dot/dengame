@@ -15,7 +15,7 @@ public class ObjectGenManager : MonoBehaviour
     void Update()
     {
         ItemData[] items = GameObject.FindObjectsOfType<ItemData>();
-        for (int i = 0; i < item.Length; i++)
+        for (int i = 0; i < items.Length; i++)
         {
             ItemData item = items[i];
             if(item.type == ItemType.arrow)
@@ -23,6 +23,13 @@ public class ObjectGenManager : MonoBehaviour
                 return;
                 //arrowがあれば関数を抜ける
             }
+        }
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (ItemKeeper.hasArrows == 0 && player!= null)
+        {
+            int index = Random.Range(0, objGens.Length);
+            ObjectGenPoint objgen = objGens[index];
+            objgen.ObjectCreate();
         }
     }
 }

@@ -113,4 +113,19 @@ public class UIManager : MonoBehaviour
         UpdateItemCount();
         UpdateHP();
     }
+
+    public void GameClear()
+    {
+        mainImage.SetActive(true);
+        mainImage.GetComponent<Image>().sprite = gameClearSpr;
+        inputPanel.SetActive(false);
+        PlayerScript.gameState = "gameclear";
+        Invoke("GoToTitle", 3.0f);
+    }
+
+    void GoToTitle()
+    {
+        PlayerPrefs.DeleteKey("LastScene");
+        SceneManager.LoadScene("Title");
+    }
 }
