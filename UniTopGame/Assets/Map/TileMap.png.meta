@@ -3,7 +3,7 @@ guid: bafa766b4cb79af46806b786153ed19e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 12
+  serializedVersion: 13
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -692,9 +692,13 @@ TextureImporter:
         height: 32
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 15, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -16, y: 16}
+        - {x: -16, y: -6}
+        - {x: 16, y: -6}
+        - {x: 16, y: 16}
       tessellationDetail: 0
       bones: []
       spriteID: 5d4ea17ebc85b2741b8cfdec773747a1
