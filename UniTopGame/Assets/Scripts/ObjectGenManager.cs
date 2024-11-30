@@ -14,6 +14,15 @@ public class ObjectGenManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ItemData[] items = GameObject.FindObjectsOfType<ItemData>();
+        for (int i = 0; i < item.Length; i++)
+        {
+            ItemData item = items[i];
+            if(item.type == ItemType.arrow)
+            {
+                return;
+                //arrowがあれば関数を抜ける
+            }
+        }
     }
 }
