@@ -3,21 +3,26 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class onewayexit : MonoBehaviour
-{
+{//Unityメモ、「Componentをスクリプトから操作」～「タグ」参照
+    //出口にプレイヤーがいるかどうか
     public bool playerHere = false;
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        //もし接触した物体のタグが"Player"だったら
+        if ()
         {
-            playerHere = true;
+            //二択trueまたはfalse
+            //playerHere = ????;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        //もし接触状態から離れた物体のタグが"Player"だったら
+        if ()
         {
-            playerHere = false;
+            //二択trueまたはfalse
+            //playerHere = ????;
         }
     }
 }
