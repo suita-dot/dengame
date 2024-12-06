@@ -5,7 +5,6 @@ using UnityEngine;
 public class onewayentry : MonoBehaviour
 {
     public bool playerHere = false;
-    
 
     void OnTriggerEnter2D(Collider2D other)
     {
