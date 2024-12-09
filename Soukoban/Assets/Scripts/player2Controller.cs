@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class player2Controller : MonoBehaviour
 {
-    float Movedistance = 1.0f;
-    float Moveduration = 0.2f;
-    float Movechecktime = 0.1f;
+    
     private Rigidbody2D rb2d;
     float speed = 5.0f;
-    float InputStay = 1.0f;
-
+    
+    Vector3 koshiten;
+    Vector3 gap;
+    Vector3 goal;
     
 
     // Start is called before the first frame update
@@ -22,64 +22,31 @@ public class player2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        InputStay += Time.deltaTime;
-        if (InputStay > Moveduration)
+        koshiten = new Vector3(Mathf.Round(transform.position.x), Mathf.Round(transform.position.y),transform.position.z);
+        gap = transform.position - koshiten;
+        
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            if (Input.GetKey(KeyCode.UpArrow))
-            {
-
-                rb2d.velocity = Vector3.up *speed;
-                InputStay = 0f;
-                
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                StartCoroutine(Move(Vector3.down));
-                InputStay = 0f;
-                
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                StartCoroutine(Move(Vector3.right));
-                InputStay = 0f;
-                
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                StartCoroutine(Move(Vector3.left));
-                InputStay = 0f;
-                
-            }
+            rb2d.velocity = Vector3.up *speed;            
         }
-    }
-
-    private IEnumerator Move(Vector3 playerdirection)
-    {
-        Vector3 startPosition = transform.position;
-        Vector3 targetPosition = startPosition + playerdirection * Movedistance;
-        float elapsedTime = 0f;
-        rb2d.velocity = playerdirection*speed;
-        while (elapsedTime < Moveduration)
+        if (Input.GetKeyUp(KeyCode.UpArrow))
         {
-            
+            StartCoroutine(Up());
+        }
+        
+    }
+    private IEnumerator Up()
+    {
+        Vector3 targetPosition = new Vector3 (transform.position.x, Mathf.Ceil(transform.position.y), transform.position.z);
+        float gap = Mathf.Ceil(transform.position.y)-transform.position.y;
+        float estimateTime = gap/speed;
+        float elapsedTime = 0f;
+        while(estimateTime >= elapsedTime)
+        {
             elapsedTime += Time.deltaTime;
-            if (elapsedTime >= Movechecktime)
-            {
-                Vector3 location = transform.position - startPosition;
-                if (location.magnitude >= 0.2f)
-                {
-                    rb2d.velocity = playerdirection*speed;
-                }
-                else
-                {
-                    transform.position = new Vector3(Mathf.Round(startPosition.x),Mathf.Round(startPosition.y),transform.position.z);
-                    rb2d.velocity = new Vector3 (0,0,0);
-                    yield break;
-                }
-            }
-            yield return null;            
+            yield return null;
         }
         rb2d.velocity = Vector2.zero;
-        transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),transform.position.z);        
+        transform.position = new Vector3(Mathf.Round(targetPosition.x),Mathf.Round(targetPosition.y),Mathf.Round(targetPosition.z));
     }
 }
