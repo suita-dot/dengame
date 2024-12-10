@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class player2Controller : MonoBehaviour
-{
-    
+{    
     private Rigidbody2D rb2d;
     float speed = 5.0f; 
     float estimateTime = 0f;
