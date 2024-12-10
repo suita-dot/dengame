@@ -23,7 +23,7 @@ public class player2Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (DownMoving||UpMoving||RightMoving||LeftMoving)return;
         if (Input.GetKey(KeyCode.UpArrow))
         {
             rb2d.velocity = Vector3.up *speed;            
