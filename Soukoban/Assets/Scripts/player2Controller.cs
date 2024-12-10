@@ -22,28 +22,11 @@ public class player2Controller : MonoBehaviour
     }
 
     // Update is called once per frame
+
     void Update()
     {       
-        if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
-        {
-            UpMoving = true;
-            rb2d.velocity = Vector3.up *speed;            
-        }
-        if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
-        {
-            DownMoving = true;
-            rb2d.velocity = Vector3.down *speed;            
-        }
-        if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
-        {
-            RightMoving = true;
-            rb2d.velocity = Vector3.right *speed;            
-        }
-        if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
-        {
-            LeftMoving = true;
-            rb2d.velocity = Vector3.left *speed;            
-        }  
+        
+         
         if (Input.GetKeyUp(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
         {
             StartCoroutine(Up());          
@@ -61,10 +44,31 @@ public class player2Controller : MonoBehaviour
             StartCoroutine(Left());           
         }          
     }
+
     void FixedUpdate()
     {
-        
+        if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
+        {
+            UpMoving = true;
+            transform.position += new Vector3 (0f, 5f, 0f)*Time.deltaTime;            
+        }
+        if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
+        {
+            DownMoving = true;
+            transform.position += new Vector3 (0f, -5f, 0f)*Time.deltaTime;           
+        }
+        if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
+        {
+            RightMoving = true;
+            transform.position += new Vector3 (5f, 0f, 0f)*Time.deltaTime;          
+        }
+        if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
+        {
+            LeftMoving = true;
+            transform.position += new Vector3 (-5f, 0f, 0f)*Time.deltaTime;          
+        } 
     }
+    
     private IEnumerator Up()
     {
         while(DownMoving||RightMoving||LeftMoving)
@@ -88,6 +92,7 @@ public class player2Controller : MonoBehaviour
         while(estimateTime >= elapsedTime)
         {
             elapsedTime += Time.deltaTime;
+            transform.position += new Vector3 (0f,5f,0f)*Time.deltaTime;
             yield return null;
         }
         UpMoving = false;
@@ -116,6 +121,7 @@ public class player2Controller : MonoBehaviour
         while(estimateTime >= elapsedTime)
         {
             elapsedTime += Time.deltaTime;
+            transform.position += new Vector3 (0f,-5f,0f)*Time.deltaTime;
             yield return null;
         }
         DownMoving = false;
@@ -144,6 +150,7 @@ public class player2Controller : MonoBehaviour
         while(estimateTime >= elapsedTime)
         {
             elapsedTime += Time.deltaTime;
+            transform.position += new Vector3 (5f,0f,0f)*Time.deltaTime;
             yield return null;
         }
         RightMoving = false;
@@ -172,6 +179,7 @@ public class player2Controller : MonoBehaviour
         while(estimateTime >= elapsedTime)
         {
             elapsedTime += Time.deltaTime;
+            transform.position += new Vector3 (-5f,0f,0f)*Time.deltaTime;
             yield return null;
         }
         LeftMoving = false;
