@@ -6,6 +6,7 @@ public class player2Controller : MonoBehaviour
 {    
     private Rigidbody2D rb2d;
     float speed = 5.0f; 
+    float resetgap = 0.9f;
     float estimateTime = 0f;
     bool UpMoving = false;
     bool DownMoving = false;
@@ -25,7 +26,22 @@ public class player2Controller : MonoBehaviour
     void Update()
     {       
         
-         
+        if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
+        {
+            UpMoving = true;
+        }
+        if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
+        {
+            DownMoving = true;           
+        }
+        if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
+        {
+            RightMoving = true;      
+        }
+        if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
+        {
+            LeftMoving = true;         
+        }
         if (Input.GetKeyUp(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
         {
             StartCoroutine(Up());          
@@ -46,26 +62,30 @@ public class player2Controller : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
+        if (UpMoving&&!DownMoving&&!RightMoving&&!LeftMoving)
         {
-            UpMoving = true;
-            transform.position += new Vector3 (0f, 5f, 0f)*Time.deltaTime;            
+            Vector2 position = rb2d.position;
+            position.y += speed * Time.deltaTime;
+            rb2d.MovePosition(position);            
         }
-        if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
+        if (!UpMoving&&DownMoving&&!RightMoving&&!LeftMoving)
         {
-            DownMoving = true;
-            transform.position += new Vector3 (0f, -5f, 0f)*Time.deltaTime;           
+            Vector2 position = rb2d.position;
+            position.y -= speed * Time.deltaTime;
+            rb2d.MovePosition(position);            
         }
-        if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
+        if (!UpMoving&&!DownMoving&&RightMoving&&!LeftMoving)
         {
-            RightMoving = true;
-            transform.position += new Vector3 (5f, 0f, 0f)*Time.deltaTime;          
+            Vector2 position = rb2d.position;
+            position.x += speed * Time.deltaTime;
+            rb2d.MovePosition(position);            
         }
-        if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
+        if (!UpMoving&&!DownMoving&&!RightMoving&&LeftMoving)
         {
-            LeftMoving = true;
-            transform.position += new Vector3 (-5f, 0f, 0f)*Time.deltaTime;          
-        } 
+            Vector2 position = rb2d.position;
+            position.x -= speed * Time.deltaTime;
+            rb2d.MovePosition(position);            
+        }        
     }
     
     private IEnumerator Up()
@@ -75,7 +95,7 @@ public class player2Controller : MonoBehaviour
             yield return null;
         }
         float gap = Mathf.Ceil(transform.position.y)-transform.position.y;
-        if (gap <= 0.9f)
+        if (gap <= resetgap)
         {
             targetPosition = new Vector3 (transform.position.x, Mathf.Ceil(transform.position.y), transform.position.z);
             estimateTime = gap/speed;
@@ -86,9 +106,8 @@ public class player2Controller : MonoBehaviour
             estimateTime = 0f;
         }
         
-        
         float elapsedTime = 0f;
-        while(estimateTime >= elapsedTime)
+        while(estimateTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;
             transform.position += new Vector3 (0f,5f,0f)*Time.deltaTime;
@@ -105,7 +124,7 @@ public class player2Controller : MonoBehaviour
             yield return null;
         }
         float gap = -Mathf.Floor(transform.position.y)+transform.position.y;
-        if (gap <= 0.9f)
+        if (gap <= resetgap)
         {
             targetPosition = new Vector3 (transform.position.x, Mathf.Floor(transform.position.y), transform.position.z);
             estimateTime = gap/speed;
@@ -117,7 +136,7 @@ public class player2Controller : MonoBehaviour
         }
         
         float elapsedTime = 0f;
-        while(estimateTime >= elapsedTime)
+        while(estimateTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;
             transform.position += new Vector3 (0f,-5f,0f)*Time.deltaTime;
@@ -134,7 +153,7 @@ public class player2Controller : MonoBehaviour
             yield return null;
         }
         float gap = Mathf.Ceil(transform.position.x)-transform.position.x;
-        if (gap <= 0.9f)
+        if (gap <= resetgap)
         {
             targetPosition = new Vector3 (Mathf.Ceil(transform.position.x), transform.position.y, transform.position.z);
             estimateTime = gap/speed;
@@ -146,7 +165,7 @@ public class player2Controller : MonoBehaviour
         }
         
         float elapsedTime = 0f;
-        while(estimateTime >= elapsedTime)
+        while(estimateTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;
             transform.position += new Vector3 (5f,0f,0f)*Time.deltaTime;
@@ -163,7 +182,7 @@ public class player2Controller : MonoBehaviour
             yield return null;
         }
         float gap = -Mathf.Floor(transform.position.x)+transform.position.x;
-        if (gap <= 0.9f)
+        if (gap <= resetgap)
         {
             targetPosition = new Vector3 (Mathf.Floor(transform.position.x), transform.position.y, transform.position.z);
             estimateTime = gap/speed;
@@ -175,7 +194,7 @@ public class player2Controller : MonoBehaviour
         }
         
         float elapsedTime = 0f;
-        while(estimateTime >= elapsedTime)
+        while(estimateTime > elapsedTime)
         {
             elapsedTime += Time.deltaTime;
             transform.position += new Vector3 (-5f,0f,0f)*Time.deltaTime;
