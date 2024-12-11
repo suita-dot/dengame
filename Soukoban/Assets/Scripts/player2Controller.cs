@@ -25,7 +25,22 @@ public class player2Controller : MonoBehaviour
     void Update()
     {       
         
-         
+        if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
+        {
+            UpMoving = true;
+        }
+        if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
+        {
+            DownMoving = true;           
+        }
+        if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
+        {
+            RightMoving = true;         
+        }
+        if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
+        {
+            LeftMoving = true;         
+        }
         if (Input.GetKeyUp(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
         {
             StartCoroutine(Up());          
@@ -48,22 +63,18 @@ public class player2Controller : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow)&&!DownMoving&&!RightMoving&&!LeftMoving)
         {
-            UpMoving = true;
             transform.position += new Vector3 (0f, 5f, 0f)*Time.deltaTime;            
         }
         if (Input.GetKey(KeyCode.DownArrow)&&!UpMoving&&!RightMoving&&!LeftMoving)
         {
-            DownMoving = true;
             transform.position += new Vector3 (0f, -5f, 0f)*Time.deltaTime;           
         }
         if (Input.GetKey(KeyCode.RightArrow)&&!DownMoving&&!UpMoving&&!LeftMoving)
         {
-            RightMoving = true;
             transform.position += new Vector3 (5f, 0f, 0f)*Time.deltaTime;          
         }
         if (Input.GetKey(KeyCode.LeftArrow)&&!DownMoving&&!RightMoving&&!UpMoving)
         {
-            LeftMoving = true;
             transform.position += new Vector3 (-5f, 0f, 0f)*Time.deltaTime;          
         } 
     }
