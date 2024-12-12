@@ -21,7 +21,7 @@ public class FragileFloor : MonoBehaviour
 
     //プレイヤーがすり抜けて出て行った場合に、すり抜けられなくしてかつ画像を壊れた床に変更
     //void ????(???? other)
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         //もし出て行ったgameObjectのタグが”Player”だったら
         //if (????????????)
