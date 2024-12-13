@@ -21,12 +21,14 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        hasKeys = 0;
         rb2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        Debug.Log(hasKeys);
         InputStay += Time.deltaTime;
         if (InputStay > Moveduration && gameManager.isClear == false)
         {
