@@ -16,7 +16,6 @@ public class PlayerController : MonoBehaviour
     public bool isGameover = false;
     public int hasKeys = 0;
     public OnewayboardScript oneway;
-    public SwitchDoor switchDoor;
     
 
     void Start()
