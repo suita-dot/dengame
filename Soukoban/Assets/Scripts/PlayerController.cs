@@ -65,7 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 startPosition = transform.position;
         Vector3 targetPosition = startPosition + playerdirection * Movedistance;
-        float elapsedTime = 0f;
+        float elapsedTime = 0.01f;
         rb2d.velocity = playerdirection*speed;
         while (elapsedTime < Moveduration)
         {
