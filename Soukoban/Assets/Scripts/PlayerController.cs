@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(hasKeys);
+        //Debug.Log(hasKeys);
         InputStay += Time.deltaTime;
         if (InputStay > Moveduration && gameManager.isClear == false)
         {
