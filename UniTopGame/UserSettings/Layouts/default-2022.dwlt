@@ -40,7 +40,7 @@ MonoBehaviour:
     height: 614.6667
 >>>>>>> upstream/main
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Game
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -160,7 +160,11 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
+<<<<<<< HEAD
   controlID: 49
+>>>>>>> upstream/main
+=======
+  controlID: 43
 >>>>>>> upstream/main
   draggingID: 0
 --- !u!114 &5
@@ -209,13 +213,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: SceneView
+  m_Name: GameView
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
     serializedVersion: 2
     x: 0
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 841.5
@@ -231,6 +236,9 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     width: 653.3333
+=======
+    width: 652.6667
+>>>>>>> upstream/main
     height: 564.6667
 <<<<<<< HEAD
 >>>>>>> upstream/main
@@ -239,15 +247,19 @@ MonoBehaviour:
 =======
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 4000, y: 4000}
+<<<<<<< HEAD
 >>>>>>> upstream/main
   m_ActualView: {fileID: 17}
+=======
+  m_ActualView: {fileID: 16}
+>>>>>>> upstream/main
   m_Panes:
   - {fileID: 17}
   - {fileID: 16}
   - {fileID: 13}
   - {fileID: 12}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -267,6 +279,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 841.5
     y: 0
     width: 304
@@ -281,12 +294,16 @@ MonoBehaviour:
 =======
     x: 653.3333
 >>>>>>> upstream/main
+=======
+    x: 652.6667
+>>>>>>> upstream/main
     y: 0
-    width: 304.6667
+    width: 304.66663
     height: 564.6667
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
+<<<<<<< HEAD
 <<<<<<< HEAD
   controlID: 26
 =======
@@ -302,6 +319,9 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
   controlID: 50
+>>>>>>> upstream/main
+=======
+  controlID: 44
 >>>>>>> upstream/main
   draggingID: 0
 --- !u!114 &8
@@ -319,8 +339,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 958
+    x: 957.3333
     y: 0
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
     width: 366.5
@@ -339,9 +360,12 @@ MonoBehaviour:
   m_ActualView: {fileID: 11}
 =======
     width: 307.33337
+=======
+    width: 308.00006
+>>>>>>> upstream/main
     height: 564.6667
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
 >>>>>>> upstream/main
   m_Panes:
@@ -368,6 +392,7 @@ MonoBehaviour:
     y: 0
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     width: 304
     height: 355.5
 =======
@@ -381,6 +406,9 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     width: 304.6667
+=======
+    width: 304.66663
+>>>>>>> upstream/main
     height: 283.33334
 >>>>>>> upstream/main
   m_MinSize: {x: 202, y: 221}
@@ -424,7 +452,7 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     y: 283.33334
-    width: 304.6667
+    width: 304.66663
     height: 281.33334
 >>>>>>> upstream/main
   m_MinSize: {x: 232, y: 271}
@@ -504,7 +532,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -58870
+  m_LastSelectedObjectID: -2078
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -597,6 +625,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 1145.5
     y: 96
     width: 365.5
@@ -616,8 +645,11 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     x: 965.3334
+=======
+    x: 964.6667
+>>>>>>> upstream/main
     y: 80
-    width: 306.33337
+    width: 307.00006
     height: 543.6667
 >>>>>>> upstream/main
   m_SerializedDataModeController:
@@ -665,6 +697,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 841.5
     y: 451.5
     width: 302
@@ -684,8 +717,11 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     x: 660.6667
+=======
+    x: 660
+>>>>>>> upstream/main
     y: 363.33334
-    width: 302.6667
+    width: 302.66663
     height: 260.33334
 >>>>>>> upstream/main
   m_SerializedDataModeController:
@@ -709,7 +745,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs
+    - Assets/Scripts
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -717,12 +753,13 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Prefabs
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\dengame\dengame\UniTopGame
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -755,6 +792,12 @@ MonoBehaviour:
     m_LastClickedID: 28852
     m_ExpandedIDs: 00000000266f000000ca9a3b
 >>>>>>> upstream/main
+=======
+    scrollPos: {x: 0, y: 60}
+    m_SelectedIDs: 6c720000
+    m_LastClickedID: 29292
+    m_ExpandedIDs: 00000000c470000000ca9a3b
+>>>>>>> upstream/main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -785,6 +828,7 @@ MonoBehaviour:
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000866e0000
 =======
 <<<<<<< Updated upstream
@@ -798,6 +842,9 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     m_ExpandedIDs: 00000000266f0000
+>>>>>>> upstream/main
+=======
+    m_ExpandedIDs: 00000000c4700000
 >>>>>>> upstream/main
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -867,7 +914,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 600}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 105.33333
@@ -893,7 +940,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 7.3333335
     y: 80
-    width: 652.3333
+    width: 651.6667
     height: 543.6667
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -982,7 +1029,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -991,6 +1038,7 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 =======
@@ -1018,6 +1066,12 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     m_Translation: {x: 326.16666, y: 261.33334}
+>>>>>>> upstream/main
+=======
+      width: 651.6667
+      height: 522.6667
+    m_Scale: {x: 0.5091146, y: 0.5091146}
+    m_Translation: {x: 325.83337, y: 261.33334}
 >>>>>>> upstream/main
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1055,16 +1109,21 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
       x: -640
-      y: -512.7849
+      y: -513.30945
       width: 1280
-      height: 1025.5698
+      height: 1026.6189
     m_MinimalGUI: 1
+<<<<<<< HEAD
   m_defaultScale: 0.5096354
 <<<<<<< HEAD
   m_LastWindowPixelSize: {x: 978.5, y: 813.5}
 >>>>>>> upstream/main
 =======
   m_LastWindowPixelSize: {x: 978.5, y: 815.5}
+>>>>>>> upstream/main
+=======
+  m_defaultScale: 0.5091146
+  m_LastWindowPixelSize: {x: 977.5, y: 815.5}
 >>>>>>> upstream/main
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
@@ -1113,7 +1172,7 @@ MonoBehaviour:
 =======
     x: 7.3333335
     y: 80
-    width: 652.3333
+    width: 651.6667
     height: 543.6667
 >>>>>>> upstream/main
   m_SerializedDataModeController:
@@ -1575,6 +1634,7 @@ MonoBehaviour:
     serializedVersion: 2
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     x: 841.5
     y: 96
     width: 302
@@ -1594,8 +1654,11 @@ MonoBehaviour:
 >>>>>>> upstream/main
 =======
     x: 660.6667
+=======
+    x: 660
+>>>>>>> upstream/main
     y: 80
-    width: 302.6667
+    width: 302.66663
     height: 262.33334
 >>>>>>> upstream/main
   m_SerializedDataModeController:
@@ -1611,6 +1674,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -1637,6 +1701,11 @@ MonoBehaviour:
       m_SelectedIDs: 7a910000
       m_LastClickedID: 0
       m_ExpandedIDs: e861ffff7475ffffbc7efffffa80ffff16caffffe8caffff64cdffff7aceffff6cd7ffff12e2ffff40e8ffff36ebffff1cfbffff
+>>>>>>> upstream/main
+=======
+      m_SelectedIDs: 20260000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 16e9ffff58f8ffff1cfbffff
 >>>>>>> upstream/main
       m_RenameOverlay:
         m_UserAcceptedRename: 0

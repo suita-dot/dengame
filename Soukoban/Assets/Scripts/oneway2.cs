@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class oneway2 : MonoBehaviour
-{
+{//Unityメモ、「Componentをスクリプトから操作」～「タグ」参照
     public onewayentry entry;
     public onewayexit exit;
     private BoxCollider2D barrier;
@@ -17,13 +17,15 @@ public class oneway2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (entry.playerHere == true)
+        //もし入口にプレイヤーがいたら
+        if (entry.playerHere)
         {
-            barrier.isTrigger = true;
+            barrier.enabled = false;
         }
-        if (exit.playerHere == true)
+        //もし出口にプレイヤーがいたら
+        if (exit.playerHere)
         {
-            barrier.isTrigger = false;
+            barrier.enabled = true;
         }
     }
     

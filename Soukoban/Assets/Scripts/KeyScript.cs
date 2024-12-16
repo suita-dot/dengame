@@ -8,15 +8,15 @@ public class KeyScript : MonoBehaviour
     public PlayerController player;
     
 
-    //void ????(???? other)
-    //{
+    void OnTriggerEnter2D(Collider2D other)
+    {
         //もしぶつかったゲームオブジェクトのタグが”Player”なら
-        //if (???????????)
-        //{
+        if (other.gameObject.tag == "Player")
+        {
             //鍵のゲームオブジェクトを破壊
-            //????
+            Destroy(gameObject);
             //PlayerControllerの整数値hasKeysを1追加
-            //????
-        //}
-    //}
+            player.hasKeys += 1;
+        }
+    }
 }
