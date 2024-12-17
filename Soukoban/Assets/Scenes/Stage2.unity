@@ -1969,8 +1969,8 @@ MonoBehaviour:
   clearText: {fileID: 243339285}
   clearImage: {fileID: 1583889569}
   nextStage: {fileID: 234375083}
-  gameoverText: {fileID: 0}
-  gameoverImage: {fileID: 2011374368}
+  gameoverText: {fileID: 2011374369}
+  gameoverImage: {fileID: 1536585531}
   player: {fileID: 1624364446}
 --- !u!4 &1128579876
 Transform:

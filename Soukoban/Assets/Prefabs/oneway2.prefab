@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7556087072681461639}
   m_Layer: 0
   m_Name: onewayexit
-  m_TagString: Untagged
+  m_TagString: LaserThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -81,7 +81,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHere: 0
-  boxHere: 0
 --- !u!1 &7147152909655267855
 GameObject:
   m_ObjectHideFlags: 0
@@ -229,7 +228,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entry: {fileID: 6591511387998894508}
   exit: {fileID: 7556087072681461639}
-  barrier: {fileID: 0}
 --- !u!1 &9013319231033850671
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +241,7 @@ GameObject:
   - component: {fileID: 3464901201116863310}
   m_Layer: 0
   m_Name: onewayentry
-  m_TagString: Untagged
+  m_TagString: LaserThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

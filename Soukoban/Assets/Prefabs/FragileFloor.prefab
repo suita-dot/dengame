@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4147428622867521598}
   m_Layer: 0
   m_Name: FragileFloor
-  m_TagString: Untagged
+  m_TagString: LaserThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 497505893090323181}
   m_Layer: 0
   m_Name: Crack
-  m_TagString: Untagged
+  m_TagString: LaserThrough
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
