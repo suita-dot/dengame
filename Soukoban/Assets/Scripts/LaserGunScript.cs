@@ -21,6 +21,7 @@ public class LaserGunScript : MonoBehaviour
     float Moveduration = 0.2f;
     float Movechecktime = 0.15f;
     float InputStay = 1.0f;
+    float Modifytime = 0.22f;
     float speed = 5.0f;
     float merge = 0.1f;
     
@@ -93,7 +94,11 @@ public class LaserGunScript : MonoBehaviour
                 StartCoroutine(Move(Vector3.left));
                 InputStay = 0f;
             }
-        }          
+        }  
+        if (InputStay >= Modifytime)
+        {
+            transform.position = new Vector3(Mathf.Round(transform.position.x),Mathf.Round(transform.position.y),transform.position.z);      
+        }         
     }
 
     private IEnumerator Move(Vector3 direction)
