@@ -21,6 +21,7 @@ public class LaserGunScript : MonoBehaviour
     float Moveduration = 0.2f;
     float Movechecktime = 0.15f;
     float InputStay = 1.0f;
+    float Modifytime = 0.22f;
     float speed = 5.0f;
     float merge = 0.1f;
     
@@ -61,7 +62,7 @@ public class LaserGunScript : MonoBehaviour
         Vector3 left = Distance - Vector3.left;
         Vector3 right = Distance - Vector3.right;
         InputStay += Time.deltaTime;
-        if (Distance.magnitude < 1.01f)
+        if (Distance.magnitude < 1.3f)
         {
             rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionX;
             rb2d.constraints &= ~RigidbodyConstraints2D.FreezePositionY;
@@ -93,7 +94,11 @@ public class LaserGunScript : MonoBehaviour
                 StartCoroutine(Move(Vector3.left));
                 InputStay = 0f;
             }
-        }          
+        }  
+        if (InputStay >= Modifytime)
+        {
+            transform.position = new Vector3(Mathf.Round(transform.position.x),Mathf.Round(transform.position.y),transform.position.z);      
+        }         
     }
 
     private IEnumerator Move(Vector3 direction)

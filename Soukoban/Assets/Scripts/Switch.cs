@@ -24,7 +24,7 @@ public class Switch : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag("Player")||other.CompareTag("Box")||other.CompareTag("Dummy")||other.CompareTag("Lasergun"))
+        if (other.CompareTag("Player")||other.CompareTag("Box")||other.CompareTag("Dummy")||other.CompareTag("Lasergun")||other.CompareTag("Damage"))
         {
             isPushed = true;
             onButton = true;
@@ -35,7 +35,7 @@ public class Switch : MonoBehaviour
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player")||other.CompareTag("Box")||other.CompareTag("Dummy")||other.CompareTag("Lasergun"))
+        if (other.CompareTag("Player")||other.CompareTag("Box")||other.CompareTag("Dummy")||other.CompareTag("Lasergun")||other.CompareTag("Damage"))
         {
             onButton = false;        
             StartCoroutine(SwitchPushed(OpenTime)); 
