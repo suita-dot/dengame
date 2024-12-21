@@ -9,7 +9,7 @@ public class LaserGunScript : MonoBehaviour
     public bool isUp = false;
     public bool isDown = false;
     public float interval = 3.0f;
-    private float elapsedTime = 1.0f;
+    public float elapsedTime = 1.0f;
     public GameObject laserRight;
     public GameObject laserLeft;
     public GameObject laserUp;

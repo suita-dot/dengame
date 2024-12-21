@@ -592,7 +592,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 9.571001
+  orthographic size: 10.177089
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2690,6 +2690,16 @@ Tilemap:
   - first: {x: 8, y: 2, z: 0}
     second:
       serializedVersion: 2
+      m_TileIndex: 1
+      m_TileSpriteIndex: 1
+      m_TileMatrixIndex: 0
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1
+  - first: {x: 9, y: 2, z: 0}
+    second:
+      serializedVersion: 2
       m_TileIndex: 0
       m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
@@ -3431,15 +3441,23 @@ Tilemap:
   m_TileAssetArray:
   - m_RefCount: 112
     m_Data: {fileID: 11400000, guid: 81529ab25d121024f80c01704e4de845, type: 2}
+<<<<<<< HEAD
   - m_RefCount: 124
+=======
+  - m_RefCount: 125
+>>>>>>> upstream/main
     m_Data: {fileID: 11400000, guid: aa12dc3cf9b115b4ca3992e1d512477c, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 112
     m_Data: {fileID: 1669160095, guid: e7ed314c27cdcb444a12aef65f174886, type: 3}
+<<<<<<< HEAD
   - m_RefCount: 124
+=======
+  - m_RefCount: 125
+>>>>>>> upstream/main
     m_Data: {fileID: 339075468, guid: e7ed314c27cdcb444a12aef65f174886, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 236
+  - m_RefCount: 237
     m_Data:
       e00: 1
       e01: 0
@@ -3458,13 +3476,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 236
+  - m_RefCount: 237
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -10, y: -9, z: 0}
-  m_Size: {x: 19, y: 18, z: 1}
+  m_Size: {x: 20, y: 18, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -4286,7 +4304,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6039123081745702941, guid: ba6e346b9c1c725489418e4ef39a47f4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6039123081745702941, guid: ba6e346b9c1c725489418e4ef39a47f4, type: 3}
       propertyPath: m_LocalPosition.y
