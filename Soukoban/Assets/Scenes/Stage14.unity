@@ -662,8 +662,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f270f21edbfede549b3ffcd6c7dc1fd5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hint: {fileID: 1185720006}
-  hintBackButton: {fileID: 720746787}
 --- !u!114 &515222585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1207,6 +1205,10 @@ PrefabInstance:
       propertyPath: isLeft
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7384381406452220761, guid: ba6e346b9c1c725489418e4ef39a47f4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1128579875}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1264,8 +1266,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbf4985af6c47e845891d4dfdefe30f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hint: {fileID: 1185720006}
-  hintBackButton: {fileID: 720746787}
 --- !u!114 &720746790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4878,6 +4878,10 @@ PrefabInstance:
       propertyPath: interval
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 7384381406452220761, guid: ba6e346b9c1c725489418e4ef39a47f4, type: 3}
+      propertyPath: gameManager
+      value: 
+      objectReference: {fileID: 1128579875}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
