@@ -1,0 +1,60 @@
+@charset "UtF-8";
+body 
+{
+    background-color: #fffeee;
+}
+h1
+{
+    color: #0bd;
+    font-size:300%;
+
+    font-family: "M PLUS Rounded 1c", serif;
+    font-weight: 700;
+    font-style: normal;
+
+}
+h2
+{
+
+    font-size:2rem;
+    font-family: "游ゴシック体", "Yu Gothic", YuGothic, sans-serif;
+}
+p
+{
+    font-size:20px;
+    color: red;
+    font-family: "ヒラギノ丸ゴ", "Hiragino Maru Gothic Pro", sans-serif;
+}
+article p
+{
+    font-weight:lighter;
+    line-height:1;
+}
+aside p
+{
+    font-weight:bolder;
+    line-height:1.5;
+}
+footer p
+{
+    font-weight:bold;
+    line-height:2;
+    text-align:center;
+}
+section h2
+{
+    font-size:30px;
+    
+    color:blue;
+}
+main p
+{
+    font-weight:bold;
+    font-size:25px;
+    color:green;
+}
+div p
+{
+    font-size:25px;
+    font-weight:bolder;
+}
