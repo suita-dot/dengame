@@ -1,8 +1,14 @@
 @charset "UtF-8";
 body 
 {
-    background-color: #fffeee;
+    background-color: #f5f2e5;
+    background-image: url(images/view.jpg);
+    background-repeat: no-repeat;
+    background-size:contain;
+    background-position: center top;
 }
+/*コメント！*/
+
 h1
 {
     color: #0bd;
@@ -30,10 +36,23 @@ article p
     font-weight:lighter;
     line-height:1;
 }
+article
+{
+    background-color: #70a2dc;
+    width: 500px;
+    height: 200px;
+}
 aside p
 {
     font-weight:bolder;
     line-height:1.5;
+}
+footer
+{
+    background-color: rgba(0,255,0,.5);
+    margin-left: 30px;
+    margin-top: 100px;
+    padding-top:10px;
 }
 footer p
 {
