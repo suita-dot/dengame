@@ -33,11 +33,13 @@ public class SwitchDoor : MonoBehaviour
         {
             door.isTrigger = false;
             doorSprite.enabled = true;
+            gameObject.tag = "Untagged";
         }
         if (switchButton.isPushed == true)
         {
             door.isTrigger = true;
-            doorSprite.enabled = false;            
+            doorSprite.enabled = false;
+            gameObject.tag = "LaserThrough";
         }
     }
     void OnTriggerStay2D(Collider2D other)
