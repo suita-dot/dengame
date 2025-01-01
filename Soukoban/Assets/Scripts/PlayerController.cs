@@ -142,7 +142,7 @@ public class PlayerController : MonoBehaviour
         }
         if (other.CompareTag("Oneway"))
         {
-            InputStay = -0.2f;
+            InputStay = -0.22f;
             if (oneway.isRight)
             { 
                 StartCoroutine(ForcedMove(Vector3.right));
